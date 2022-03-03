@@ -1,8 +1,12 @@
 package com.app.controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.app.model.UserDetailsRequestModel;
+import com.app.ui.model.response.UserRest;
 
 @RestController	
 @RequestMapping("users")
@@ -13,9 +17,9 @@ public class UserController {
 		return "get user was called";
 	}
 	
-    public String createUser() {
+    public UserRest createUser(@RequestBody UserDetailsRequestModel userDetais) {
 		
-		return "create user was called";
+		 return null;
 	}
 
     public String updateUser() {
