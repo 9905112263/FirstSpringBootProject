@@ -19,6 +19,8 @@ public class UserController {
 	UserService userService;
 	public String getUser() {
 		
+		System.out.println("hellosjfjsdkl");
+		
 		return "get user was called";
 	}
 	
