@@ -3,6 +3,8 @@ package com.app.shared.utils;
 import java.security.SecureRandom;
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Utils {
 	
 	private final Random RANDUM=new SecureRandom();
