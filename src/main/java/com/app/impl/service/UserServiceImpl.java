@@ -2,6 +2,7 @@ package com.app.impl.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.app.dto.UserDto;
@@ -15,6 +16,8 @@ public class UserServiceImpl implements UserService{
 	  UserRepository userRepository;
       @Autowired
       Utils utils;
+      @Autowired
+      BCryptPasswordEncoder bCryptPasswordEncoder;
 	@Override
 	public UserDto createUser(UserDto user) {
 		// TODO Auto-generated method stub
@@ -30,7 +33,7 @@ public class UserServiceImpl implements UserService{
 		
 		String publicUserId=utils.generateRandomString(30);
 		userEntity.setUserId(publicUserId);
-		
+		userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		UserEntity storedUserDetails=userRepository.save(userEntity);
 		
 		UserDto userDto=new UserDto();

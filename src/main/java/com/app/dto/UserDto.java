@@ -12,10 +12,18 @@ public class UserDto implements Serializable{
  private String lastNname;
  private String email;
  private String encryptedPassword;
+ private String password;
  private String emailVerificationToken;
  private boolean emailVerificationStatus=false;
+ 
 public long getId() {
 	return id;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
 }
 public void setId(long id) {
 	this.id = id;
