@@ -28,6 +28,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	         .permitAll()
 	         .anyRequest()
 	         .authenticated();
+	         System.out.println("sahajksahkjahskasjh");
 //	         .authorizeRequests()
 //	         .antMatchers("/").permitAll()
 //	         .antMatchers("/app/").permitAll()
