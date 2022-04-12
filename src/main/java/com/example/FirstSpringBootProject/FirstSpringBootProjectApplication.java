@@ -19,5 +19,9 @@ public class FirstSpringBootProjectApplication {
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
+	public SpringApplicationContext springApplicationContext() {
+		return new SpringApplicationContext();
+	}
 
 }

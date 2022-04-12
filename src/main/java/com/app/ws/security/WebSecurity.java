@@ -28,7 +28,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	         .antMatchers(HttpMethod.POST,SecurityConstants.SIGN_UP_URL)
 	         .permitAll()
 	         .anyRequest()
-	         .authenticated();
+	         //.authenticated().and().addFilter(new AuthenticationFilter(authenticationManager()));
+	         .authenticated().and().addFilter(getAuthenticationFilter());
 	         System.out.println("sahajksahkjahskasjh");
 //	         .authorizeRequests()
 //	         .antMatchers("/").permitAll()
@@ -39,5 +40,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	   public void configure(AuthenticationManagerBuilder auth) throws Exception{
 	        auth.inMemoryAuthentication().withUser("user").password("password").roles("ROLE_USER");
 	    }
+	   
+	   public AuthenticationFilter getAuthenticationFilter() throws Exception{
+		   final AuthenticationFilter filter=new AuthenticationFilter(authenticationManager());
+		   filter.setFilterProcessesUrl("/users/login");
+		   return filter;
+	   }
 
 }
