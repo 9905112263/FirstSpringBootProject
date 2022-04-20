@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.app.ws.security.AppProperties;
-
+//@SpringBootApplication(exclude = [DataSourceAutoConfiguration::class])
 @SpringBootApplication
 @ComponentScan(basePackages="com.app")
 public class FirstSpringBootProjectApplication {
