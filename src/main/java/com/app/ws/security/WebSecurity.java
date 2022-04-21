@@ -42,7 +42,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	    }
 	   
 	   public void configure(AuthenticationManagerBuilder auth) throws Exception{
-	        auth.inMemoryAuthentication().withUser("user").password("password").roles("ROLE_USER");
+	        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
 	    }
 	   
 	   public AuthenticationFilter getAuthenticationFilter() throws Exception{
